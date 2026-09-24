@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Pembuat Perangkat Pembelajaran Guru</title>
+<style>
+:root{--bg:#f5f6fb;--card:#fff;--ink:#1c1f33;--mut:#5f6480;--pri:#4338ca;--on:#fff;--bd:#dfe2f0;--soft:#eceafd}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1120;--card:#181b30;--ink:#eceefb;--mut:#a2a7c6;--pri:#8b83ff;--on:#0f1120;--bd:#2b2f4d;--soft:#23264a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:28px 18px 48px}
+h1{font-size:clamp(22px,4vw,30px);margin:0 0 6px}
+h2{font-size:18px;margin:0 0 10px}
+p.lead{color:var(--mut);margin:0 0 22px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px;margin-bottom:18px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.bar h2{margin:0}
+button{font:inherit;font-weight:600;background:var(--pri);color:var(--on);border:0;border-radius:10px;padding:9px 16px;cursor:pointer}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:16px;font:13.5px/1.6 ui-monospace,Menlo,Consolas,monospace}
+ul{margin:0;padding-left:20px}
+li{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📚 Prompt Pembuat Perangkat Pembelajaran Guru</h1>
+  <p class="lead">Salin prompt di bawah ini ke Claude, ChatGPT, atau AI lain. Ganti semua teks dalam <code>[ ]</code> dengan data kelas Anda, lalu hapus bagian perangkat yang tidak dibutuhkan.</p>
+
+  <div class="card">
+    <div class="bar">
+      <h2>Prompt</h2>
+      <button id="copy" type="button">Salin Prompt</button>
+    </div>
+<pre id="prompt">Anda adalah pakar pengembang kurikulum dan guru berpengalaman di Indonesia. Buatkan perangkat pembelajaran berikut yang siap dipakai guru.
+
+DATA PEMBELAJARAN
+- Jenjang: [SD/MI | SMP/MTs | SMA/MA | SMK]
+- Kelas/Fase: [mis. Kelas 7 / Fase D]
+- Mata pelajaran: [mis. Informatika]
+- Topik/Materi: [mis. Berpikir komputasional]
+- Alokasi waktu: [mis. 2 x 40 menit] per pertemuan, [jumlah] pertemuan
+- Kurikulum: [Kurikulum Merdeka | Kurikulum Merdeka (Pembelajaran Mendalam) | Kurikulum 2013]
+- Model pembelajaran: [PBL | PjBL | Discovery Learning | Inquiry | Cooperative Learning | bebas]
+- Catatan kelas: [mis. 32 siswa, laptop terbatas, ada siswa berkebutuhan khusus]
+
+PERANGKAT YANG DIBUAT
+1. Modul Ajar
+Susun lengkap: (a) Informasi Umum (identitas, kompetensi awal, dimensi profil lulusan, sarana prasarana, target peserta didik, model pembelajaran); (b) Komponen Inti (tujuan pembelajaran, pemahaman bermakna, pertanyaan pemantik, kegiatan pendahuluan, inti, penutup per pertemuan dengan alokasi menit, asesmen diagnostik, formatif, sumatif, pengayaan dan remedial, refleksi guru dan siswa); (c) Lampiran singkat (bahan bacaan, glosarium).
+
+2. CP, TP &amp; ATP
+Uraikan Capaian Pembelajaran sesuai fase, rumuskan Tujuan Pembelajaran dengan kata kerja operasional, lalu susun Alur Tujuan Pembelajaran berurutan dalam tabel beserta alokasi waktu dan bentuk asesmen.
+
+3. LKPD
+Buat Lembar Kerja Peserta Didik: identitas, tujuan, petunjuk, ringkasan materi singkat, langkah kegiatan/eksplorasi, pertanyaan bertingkat (mudah ke sulit), ruang jawaban, kolom refleksi, dan rubrik penilaian singkat.
+
+4. Bahan Ajar
+Tulis bahan ajar/ringkasan materi yang runtut: uraian konsep, contoh kontekstual, poin penting, dan latihan mandiri.
+
+5. Soal &amp; Kisi-kisi
+Buat kisi-kisi dalam tabel (TP, indikator, level kognitif, bentuk soal, nomor soal), 10 soal pilihan ganda dan 5 soal uraian, kunci jawaban, serta pedoman penskoran.
+
+6. Rubrik Penilaian
+Buat rubrik penilaian pengetahuan, keterampilan, dan sikap dalam tabel 4 level (indikator, deskriptor, skor) beserta cara mengolah nilai akhir.
+
+ATURAN
+- Gunakan bahasa Indonesia yang baku dan mudah dipahami.
+- Kegiatan harus konkret, kontekstual, dan sesuai tingkat perkembangan siswa.
+- Jangan mengarang nomor regulasi, referensi, atau tautan; tandai bagian yang perlu dicek guru.
+- Tulis dalam format Markdown dengan judul dan tabel yang rapi.
+- Akhiri dengan catatan singkat bagian mana yang sebaiknya disesuaikan guru.</pre>
+  </div>
+
+  <div class="card">
+    <h2>Contoh Pengisian</h2>
+<pre>- Jenjang: SMP/MTs
+- Kelas/Fase: Kelas 7 / Fase D
+- Mata pelajaran: Informatika
+- Topik/Materi: Berpikir komputasional
+- Alokasi waktu: 2 x 40 menit per pertemuan, 2 pertemuan
+- Kurikulum: Kurikulum Merdeka
+- Model pembelajaran: Problem Based Learning
+- Catatan kelas: 32 siswa, laptop terbatas
+
+Perangkat yang dipilih: nomor 1, 3, dan 5.</pre>
+  </div>
+
+  <div class="card">
+    <h2>Tips</h2>
+    <ul>
+      <li>Untuk hasil lebih lengkap, minta satu jenis perangkat per percakapan (misalnya hanya Modul Ajar), lalu lanjutkan dengan LKPD dan soal di pesan berikutnya.</li>
+      <li>Selalu periksa hasil AI dan sesuaikan dengan kondisi kelas serta ketentuan sekolah sebelum digunakan.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var btn = this, text = document.getElementById('prompt').textContent;
+  function done(ok) {
+    btn.textContent = ok ? 'Tersalin ✓' : 'Gagal, salin manual';
+    setTimeout(function () { btn.textContent = 'Salin Prompt'; }, 2000);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+  } else {
+    var t = document.createElement('textarea');
+    t.value = text; document.body.appendChild(t); t.select();
+    try { document.execCommand('copy'); done(true); } catch (e) { done(false); }
+    document.body.removeChild(t);
+  }
+});
+</script>
+</body>
+</html>
